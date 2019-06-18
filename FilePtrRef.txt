@@ -1,0 +1,56 @@
+CREDIT: code.bin USA pointer reference by Teawater, EUR and JPN and Menu.cro derived from Teawater's reference by CHEMI6DER/TheFearsomeDzeraora
+*Pointer reference format*
+PTR_USA | PTR_EUR | PTR_JPN | Description
+Note: all pointer to data within the .code should be offset by 0x100000(just subtract 0x100000 from the pointer value) because 3DS loads all code at offset 0x100000 and .code files have absolute offsets
+*code.bin pointers*
+0058E854 | 0058F8CC | 0058E70C | Pointers list for filenames and data, stuff in this section below is derived from this table, first goes the filename pointer then the data pointer, all values are UInt16 in LE byteorder
+00592224 | 0059329C | 005920DC | For FMapDat.dat
+00593AEC | 00594B64 | 005939A4 | For DObjPc.dat
+005941D4 | 0059524C | 0059408C | For DObjUI.dat
+0059492C | 005959A4 | 005948BC | For DObjMon.dat
+00594C6C | 00595CD4 | 00594BEC | For DObjChar.dat
+00595794 | 0059680C | 00595724 | For DObjEtc.dat
+005958AC | 00596924 | 0059583C | For DMdl.dat
+0058E894 | 0068F90C | 0058E74C | For DObjPc2.dat
+---
+Field Data
+
+0057EEB4 | 0057FF2C | 0057EC44 | Another pointer list for filenames & data, stuff in this section below is derived from this table, structured same as above
+00584CCC | 00585D44 | 00584A7C | For FMapDat.dat
+00586594 | 0058760C | 00586344 | For FObjPc.dat
+00586F4C | 00587FC4 | 00586CFC | For FObjUI.dat
+00587A04 | 00588A7C | 005878BC | For FObjMon.dat
+00587D5C | 00588DD4 | 00587C14 | For FObjChr.dat
+00589644 | 0058A6BC | 005894FC | For FObjEtc.dat
+00589824 | 0058A89C | 005896DC | For FMdl.dat
+
+---
+Battle Data
+
+00553D88 | 00554D88 | 00553B48 | Third pointer list for filenames and data, stuff in this section below is derived from this table, note: unlike others first goes pointer to the data then pointer to the filename, also all values are separated by 8 null bytes, all values are UInt16 in LE byteorder
+0054EB40 | 0054FB40 | 0054E908 | For BObjMon.dat
+00550568 | 00551568 | 00550330 | For BObjPC.dat
+005510D0 | 005520D0 | 00550DC8 | For BObjUI.dat
+00552488 | 00553488 | 00552248 | For MObjAtk.dat
+00552748 | 00553748 | 00552508 | For BMap.dat
+00552950 | 00553950 | 00552710 | For BMdl.dat
+00552A38 | 00553A38 | 005527F8 | For BAI_scn_ji.dat
+00552CC8 | 00553CC8 | 00552A88 | For BAI_mon_ji.dat
+00552EC8 | 00553EC8 | 00552C88 | For BAI_scn_fo.dat
+00553178 | 00554178 | 00552F38 | For BAI_mon_fo.dat
+00553290 | 00554290 | 00553050 | For BAI_scn_mu.dat
+005533E8 | 005543E8 | 005531A8 | For BAI_mon_mu.dat
+00553478 | 00554478 | 00553238 | For BAI_atk_rs.dat
+00553568 | 00554568 | 00553328 | For BAI_atk_ms.dat
+00553748 | 00554748 | 00553508 | For BAI_atk_hk.dat
+00553A28 | 00554A28 | 005537E8 | For BAI_scn_mo.dat
+00553A58 | 00554A58 | 00553818 | For BAI_mon_mo.dat
+00553B40 | 00554B40 | 00553900 | For BAI_atk_mo.dat
+00553C10 | 00654C10 | 005539D0 | For BAI_atk_etc.dat
+
+*Menu.cro pointers*
+00000000 | 00046600 | 00000000 | For ?
+00000000 | 0004D238 | 00000000 | For MObj.dat
+00000000 | 0004F8BC | 00000000 | For MObjAtk.dat
+00000000 | 0004FBA4 | 00000000 | For MMdl.dat
+00000000 | 0004FDA0 | 00000000 | For MEvent.dat

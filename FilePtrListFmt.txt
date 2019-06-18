@@ -1,0 +1,11 @@
+*Doc format*
+Realtive_addr | Length | Description
+*Header*, Length = const 0x10
+0x0 | 0x2 | const 0x0?
+0x2 | 0x2 | Item_count
+0x4 | 0x4? | Something
+0x8 | 0x4? | Something1
+0xC | 0x4? | Something2
+*Pointer data*, Length_Each = 0x8, Length_Total = Header.Item_count*0x8
+0x0 | 0x4 | Start offset relative to the beginning of the extractable file
+0x4 | 0x4 | File size + 0x40000000(maybe byte 0x40 is used for something?)
